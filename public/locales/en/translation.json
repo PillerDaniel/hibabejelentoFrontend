@@ -1,0 +1,17 @@
+{
+    "navbar": {
+        "dashboard": "Dashboard",
+        "report": "Reports",
+        "logout": "Sign out",
+        "login": "Login"
+    },
+    "login": {
+        "title": "Login",
+        "username": "Username",
+        "password": "Password",
+        "username_placehlder": "Enter your username.",
+        "password_placeholder": "Enter your password.",
+        "buttontext": "Login",
+        "buttontext_loading": "Logging in..."
+    }
+}

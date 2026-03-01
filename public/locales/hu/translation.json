@@ -1,0 +1,17 @@
+{
+    "navbar": {
+        "dashboard": "Vezérlőpult",
+        "report": "Hibajegyek",
+        "logout": "Kijelentkezés",
+        "login": "Bejelentkezés"
+    },
+    "login": {
+        "title": "Bejelentkezés",
+        "username": "Felhasználónév",
+        "password": "Jelszó",
+        "username_placehlder": "Add meg a felhasználóneved.",
+        "password_placeholder": "Add meg a jelszavad.",
+        "buttontext": "Bejelentkezés",
+        "buttontext_loading": "Bejelentkezés folyamatban..."
+    }
+}

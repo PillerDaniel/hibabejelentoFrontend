@@ -1,1 +1,22 @@
 @import 'tailwindcss';
+html {
+    background-color: #9db2bf;
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #27374d inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: #27374d !important;
+}
+
+input {
+    color: white !important;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input::caret {
+    color: #27374d !important;
+}
