@@ -17,8 +17,31 @@
         "buttontext_loading": "Bejelentkezés folyamatban..."
     },
     "unathorized": {
-        "title": "403 - Nincs jogosultságod megtekinteni ezt az oldalt.",
+        "title": "403 - Nincs jogosultsága megtekinteni ezt az oldalt.",
         "message": "Nincs jogosultsága megtekinteni ezt az oldalt.",
+        "buttontext": "Vissza a főoldalra"
+    },
+    "reportCardUser": {
+        "priority": "Prioritás:",
+        "open": "Nyitott",
+        "inProgress": "Folyamatban",
+        "done": "Kész",
+        "unassigned": "Kezeletlen",
+        "admin": "Adminisztrátor",
+        "maintainer": "Karbatrató"
+    },
+    "userDashboard": {
+        "newReport": "Új hiba",
+        "open": "Nyitott",
+        "inProgress": "Folyamatban",
+        "done": "Kész",
+        "filter": "Szűrés",
+        "noReports": "Nincs megjeleníthető hibajegy",
+        "all": "Összes"
+    },
+    "notFound": {
+        "title": "404 - Az oldal nem található.",
+        "message": "A keresett oldal nem található.",
         "buttontext": "Vissza a főoldalra"
     }
 }

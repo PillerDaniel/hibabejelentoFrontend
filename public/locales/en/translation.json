@@ -20,5 +20,28 @@
         "title": "403 - You are not authorized to view this page.",
         "message": "You don't have permission to access this page.",
         "buttontext": "Home"
+    },
+    "reportCardUser": {
+        "priority": "Priority:",
+        "open": "Open",
+        "inProgress": "In Progress",
+        "done": "Done",
+        "unassigned": "Unassigned",
+        "admin": "Admin",
+        "maintainer": "Maintainer"
+    },
+    "userDashboard": {
+        "newReport": "New Report",
+        "open": "Open",
+        "inProgress": "In Progress",
+        "done": "Done",
+        "filter": "Filter",
+        "noReports": "No reports found.",
+        "all": "All"
+    },
+    "notFound": {
+        "title": "404 - Page not found.",
+        "message": "The page you are looking for does not exist.",
+        "buttontext": "Home"
     }
 }

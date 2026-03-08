@@ -19,6 +19,8 @@ import Unathorized from './Pages/Unathorized';
 import UserDashboard from './Pages/UserDashboard';
 import MaintainerDashboard from './Pages/MaintainerDashboard';
 import Register from './Pages/Register';
+import Landing from './Pages/Landing';
+import NotFound from './Pages/NotFound';
 
 function App() {
     return (
@@ -28,6 +30,8 @@ function App() {
                     <Navbar />
                     <main className="flex-grow">
                         <Routes>
+                            <Route path="*" element={<NotFound />} />
+                            <Route path="/" element={<Landing />} />
                             <Route path="/login" element={<Login />} />
                             <Route
                                 path="/unauthorized"
