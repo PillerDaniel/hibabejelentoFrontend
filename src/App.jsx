@@ -48,6 +48,15 @@ function App() {
                                 }
                             />
                             <Route
+                                path="/my-reports/:reportId"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['user', 'admin']}
+                                        element={<ReportDetails />}
+                                    />
+                                }
+                            />
+                            <Route
                                 path="/maintainer-dashboard"
                                 element={
                                     <ProtectedRoute

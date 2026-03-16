@@ -294,105 +294,119 @@ const ReportDetails = () => {
                                             </div>
                                         </div>
 
-                                        <div className="flex flex-col gap-3">
-                                            {report.managedBy === null && (
-                                                <button
-                                                    onClick={() =>
-                                                        assignToMaintainer(
-                                                            report.id
-                                                        )
-                                                    }
-                                                    disabled={loading}
-                                                    className="w-full py-3 bg-[#526D82] hover:bg-blue-300 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
-                                                >
-                                                    <CheckCircle
-                                                        size={22}
-                                                        weight="bold"
-                                                    />
-                                                    {t(
-                                                        'reportDetails.assignButton'
-                                                    )}
-                                                </button>
-                                            )}
-
-                                            {report.managedBy &&
-                                                String(
-                                                    report.managedBy.username
-                                                ) !== String(user?.username) &&
-                                                report.status ===
-                                                    'in progress' && (
-                                                    <div className="w-full py-4 px-6 bg-[#526D82] text-white font-bold rounded-xl flex items-center justify-center gap-3 border border-gray-200 uppercase text-xs tracking-widest shadow-md min-h-[64px]">
-                                                        <XCircle
-                                                            size={24}
-                                                            weight="fill"
-                                                            className="text-red-400 shrink-0"
+                                        {user.role !== 'user' && (
+                                            <div className="flex flex-col gap-3">
+                                                {report.managedBy === null && (
+                                                    <button
+                                                        onClick={() =>
+                                                            assignToMaintainer(
+                                                                report.id
+                                                            )
+                                                        }
+                                                        disabled={loading}
+                                                        className="w-full py-3 bg-[#526D82] hover:bg-blue-300 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
+                                                    >
+                                                        <CheckCircle
+                                                            size={22}
+                                                            weight="bold"
                                                         />
-                                                        <span className="text-center">
-                                                            {t(
-                                                                'reportDetails.alreadyAssigned'
-                                                            )}
-                                                        </span>
+                                                        {t(
+                                                            'reportDetails.assignButton'
+                                                        )}
+                                                    </button>
+                                                )}
+
+                                                {report.managedBy &&
+                                                    String(
+                                                        report.managedBy
+                                                            .username
+                                                    ) !==
+                                                        String(
+                                                            user?.username
+                                                        ) &&
+                                                    report.status ===
+                                                        'in progress' && (
+                                                        <div className="w-full py-4 px-6 bg-[#526D82] text-white font-bold rounded-xl flex items-center justify-center gap-3 border border-gray-200 uppercase text-xs tracking-widest shadow-md min-h-[64px]">
+                                                            <XCircle
+                                                                size={24}
+                                                                weight="fill"
+                                                                className="text-red-400 shrink-0"
+                                                            />
+                                                            <span className="text-center">
+                                                                {t(
+                                                                    'reportDetails.alreadyAssigned'
+                                                                )}
+                                                            </span>
+                                                        </div>
+                                                    )}
+
+                                                {report.managedBy &&
+                                                    String(
+                                                        report.managedBy
+                                                            .username
+                                                    ) ===
+                                                        String(
+                                                            user?.username
+                                                        ) &&
+                                                    report.status ===
+                                                        'in progress' && (
+                                                        <>
+                                                            <button
+                                                                onClick={() =>
+                                                                    handleStatusChange(
+                                                                        'done'
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    loading
+                                                                }
+                                                                className="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
+                                                            >
+                                                                <CheckCircle
+                                                                    size={22}
+                                                                    weight="fill"
+                                                                />
+                                                                {t(
+                                                                    'reportDetails.completeButton'
+                                                                )}
+                                                            </button>
+
+                                                            <button
+                                                                onClick={() =>
+                                                                    handleStatusChange(
+                                                                        'open'
+                                                                    )
+                                                                }
+                                                                disabled={
+                                                                    loading
+                                                                }
+                                                                className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
+                                                            >
+                                                                <ArrowLeft
+                                                                    size={22}
+                                                                    weight="bold"
+                                                                />
+                                                                {t(
+                                                                    'reportDetails.unassignButton'
+                                                                )}
+                                                            </button>
+                                                        </>
+                                                    )}
+
+                                                {report.status === 'done' && (
+                                                    <div className="w-full py-4 bg-[#526D82] text-white font-bold rounded-xl flex items-center justify-center gap-2 border border-gray-200 uppercase text-xs tracking-widest text-center">
+                                                        <CheckCircle
+                                                            size={24}
+                                                            className="text-emerald-500"
+                                                            weight="fill"
+                                                        />
+                                                        {t(
+                                                            'reportDetails.alreadyCompleted'
+                                                        )}
                                                     </div>
                                                 )}
-
-                                            {report.managedBy &&
-                                                String(
-                                                    report.managedBy.username
-                                                ) === String(user?.username) &&
-                                                report.status ===
-                                                    'in progress' && (
-                                                    <>
-                                                        <button
-                                                            onClick={() =>
-                                                                handleStatusChange(
-                                                                    'done'
-                                                                )
-                                                            }
-                                                            disabled={loading}
-                                                            className="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
-                                                        >
-                                                            <CheckCircle
-                                                                size={22}
-                                                                weight="fill"
-                                                            />
-                                                            {t(
-                                                                'reportDetails.completeButton'
-                                                            )}
-                                                        </button>
-
-                                                        <button
-                                                            onClick={() =>
-                                                                handleStatusChange(
-                                                                    'open'
-                                                                )
-                                                            }
-                                                            disabled={loading}
-                                                            className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
-                                                        >
-                                                            <ArrowLeft
-                                                                size={22}
-                                                                weight="bold"
-                                                            />
-                                                            {t(
-                                                                'reportDetails.unassignButton'
-                                                            )}
-                                                        </button>
-                                                    </>
-                                                )}
-
-                                            {report.status === 'done' && (
-                                                <div className="w-full py-4 bg-[#526D82] text-white font-bold rounded-xl flex items-center justify-center gap-2 border border-gray-200 uppercase text-xs tracking-widest text-center">
-                                                    <CheckCircle
-                                                        size={24}
-                                                        className="text-emerald-500"
-                                                        weight="fill"
-                                                    />
-                                                    {t(
-                                                        'reportDetails.alreadyCompleted'
-                                                    )}
-                                                </div>
-                                            )}
-                                        </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </>

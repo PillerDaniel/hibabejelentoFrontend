@@ -6,6 +6,7 @@ import {
     IdentificationCard,
 } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 
 const ReportCard = ({ report }) => {
     const { t, i18n } = useTranslation();
@@ -21,6 +22,8 @@ const ReportCard = ({ report }) => {
         }
     };
 
+    const navigate = useNavigate();
+
     const getPriorityStyles = (priority) => {
         if (priority === 1) {
             return 'text-green-500';
@@ -29,10 +32,6 @@ const ReportCard = ({ report }) => {
         } else {
             return 'text-red-500';
         }
-    };
-
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
     };
 
     const decideRole = (role) => {
@@ -67,7 +66,9 @@ const ReportCard = ({ report }) => {
                     {report.title}
                 </h3>
                 <p className="text-sm text-white line-clamp-3 mb-4">
-                    {report.description}
+                    {report.description.length > 40
+                        ? report.description.substring(0, 40) + '...'
+                        : report.description}
                 </p>
             </div>
 
@@ -99,6 +100,15 @@ const ReportCard = ({ report }) => {
                     />
                     {t('reportCardUser.priority')} {report.priority}
                 </div>
+            </div>
+            <div className="pt-4 border-t border-gray-100 flex justify-end items-center mt-4 gap-4">
+                <button
+                    onClick={() => navigate(`/my-reports/${report.id}`)}
+                    type="button"
+                    className="text-white bg-[#526d82] hover:bg-blue-300 focus:ring-4 focus:ring-blue-200 cursor-pointer rounded-full text-sm px-5 py-2.5 font-medium transition-all active:scale-95 focus:outline-none shadow-sm"
+                >
+                    {t('maintainerCard.details')}
+                </button>
             </div>
         </div>
     );

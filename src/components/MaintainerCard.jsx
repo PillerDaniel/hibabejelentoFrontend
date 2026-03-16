@@ -117,7 +117,7 @@ const MaintainerCard = ({ report }) => {
                     {report.title}
                 </h3>
                 <p className="text-sm text-white line-clamp-3 mb-4">
-                    {report.description.length > 25
+                    {report.description.length > 40
                         ? report.description.substring(0, 40) + '...'
                         : report.description}
                 </p>
