@@ -67,7 +67,8 @@
         "unassigned": "Kezeletlen",
         "admin": "Admin",
         "maintainer": "Karbatrató",
-        "edit": "Szerkesztés"
+        "details": "Részletek",
+        "assignButton": "kezelés"
     },
     "createReportModal": {
         "newReport": "Új hibajegy",
@@ -89,5 +90,22 @@
         "lastName": "Vezetéknév",
         "firstName": "Keresztnév",
         "submitButton": "Regisztrálás"
+    },
+    "reportDetails": {
+        "backButton": "Vissza",
+        "description": "Leírás:",
+        "info": "Információk",
+        "priority": "Prioritás:",
+        "reportedBy": "Bejelentő:",
+        "assignedTo": "Kezelő:",
+        "unassigned": "Kezeletlen",
+        "completeButton": "Lezárás",
+        "open": "Nyitott",
+        "inProgress": "Folyamatban",
+        "done": "Kész",
+        "alreadyCompleted": "Ez a hibajegy már kész van.",
+        "assignButton": "Kezelés",
+        "unassignButton": "Hibajegy leadása",
+        "alreadyAssigned": "Ezt a hibajegyet már kezelik."
     }
 }

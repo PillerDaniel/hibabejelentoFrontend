@@ -21,6 +21,7 @@ import MaintainerDashboard from './Pages/MaintainerDashboard';
 import Register from './Pages/Register';
 import Landing from './Pages/Landing';
 import NotFound from './Pages/NotFound';
+import ReportDetails from './Pages/ReportDetails';
 
 function App() {
     return (
@@ -52,6 +53,15 @@ function App() {
                                     <ProtectedRoute
                                         allowedRoles={['maintainer', 'admin']}
                                         element={<MaintainerDashboard />}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/maintainer-dashboard/:reportId"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['maintainer', 'admin']}
+                                        element={<ReportDetails />}
                                     />
                                 }
                             />

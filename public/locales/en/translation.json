@@ -67,7 +67,8 @@
         "unassigned": "Unassigned",
         "admin": "Admin",
         "maintainer": "Maintainer",
-        "edit": "Edit"
+        "details": "Details",
+        "assignButton": "Assign to me"
     },
     "createReportModal": {
         "newReport": "New Report",
@@ -89,5 +90,22 @@
         "lastName": "Last Name",
         "firstName": "First Name",
         "submitButton": "Register"
+    },
+    "reportDetails": {
+        "backButton": "Back",
+        "description": "Description:",
+        "info": "Information",
+        "priority": "Priority:",
+        "reportedBy": "Reported by:",
+        "assignedTo": "Assigned to:",
+        "unassigned": "Unassigned",
+        "completeButton": "Complete",
+        "open": "Open",
+        "inProgress": "In Progress",
+        "done": "Done",
+        "alreadyCompleted": "This report is already completed.",
+        "assignButton": "Assign to me",
+        "unassignButton": "Unassign",
+        "alreadyAssigned": "This report is already assigned to someone else."
     }
 }
