@@ -8,12 +8,15 @@ import {
     ChatCenteredText,
     CheckCircle,
     XCircle,
+    Pencil,
 } from 'phosphor-react';
 import axiosInstance from '../utils/axios';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
 import spinner from '../assets/spinner.svg';
+
+import EditReportModal from '../components/modals/EditReportModal';
 
 const ReportDetails = () => {
     const { user } = useAuth();
@@ -27,6 +30,7 @@ const ReportDetails = () => {
 
     const [report, setReport] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
     useEffect(() => {
         const fetchDetails = async () => {
@@ -150,8 +154,20 @@ const ReportDetails = () => {
         }
     };
 
+    const handleUpdateSuccess = (updatedReport) => {
+        setReport(updatedReport);
+        setIsEditModalOpen(false);
+    };
+
     return (
         <div className="max-w-5xl mx-auto p-4 md:p-8">
+            {isEditModalOpen && (
+                <EditReportModal
+                    report={report}
+                    onClose={() => setIsEditModalOpen(false)}
+                    onUpdateSuccess={handleUpdateSuccess}
+                />
+            )}
             <button
                 onClick={() => navigate(-1)}
                 className="flex items-center gap-2 text-[#526D82] hover:text-[#27374D] transition-colors mb-6 font-medium"
@@ -392,6 +408,21 @@ const ReportDetails = () => {
                                                             </button>
                                                         </>
                                                     )}
+                                                {report.status !== 'done' && (
+                                                    <button
+                                                        onClick={() =>
+                                                            setIsEditModalOpen(
+                                                                true
+                                                            )
+                                                        }
+                                                        className="w-full py-3 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
+                                                    >
+                                                        <Pencil size={22} />
+                                                        {t(
+                                                            'reportDetails.edit'
+                                                        )}
+                                                    </button>
+                                                )}
 
                                                 {report.status === 'done' && (
                                                     <div className="w-full py-4 bg-[#526D82] text-white font-bold rounded-xl flex items-center justify-center gap-2 border border-gray-200 uppercase text-xs tracking-widest text-center">

@@ -106,6 +106,16 @@
         "alreadyCompleted": "This report is already completed.",
         "assignButton": "Assign to me",
         "unassignButton": "Unassign",
-        "alreadyAssigned": "This report is already assigned to someone else."
+        "alreadyAssigned": "This report is already assigned to someone else.",
+        "edit": "Edit"
+    },
+    "editReportModal": {
+        "cardTitle": "Editor",
+        "title": "Title:",
+        "category": "Category:",
+        "priority": "Priority:",
+        "description": "Description:",
+        "saveButton": "Save",
+        "cancelButton": "Cancel"
     }
 }

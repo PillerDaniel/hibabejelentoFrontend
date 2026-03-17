@@ -106,6 +106,16 @@
         "alreadyCompleted": "Ez a hibajegy már kész van.",
         "assignButton": "Kezelés",
         "unassignButton": "Hibajegy leadása",
-        "alreadyAssigned": "Ezt a hibajegyet már kezelik."
+        "alreadyAssigned": "Ezt a hibajegyet már kezelik.",
+        "edit": "Szerkesztés"
+    },
+    "editReportModal": {
+        "cardTitle": "Szerkesztő",
+        "title": "Cím:",
+        "category": "Kategória:",
+        "priority": "Prioritás:",
+        "description": "Leírás:",
+        "saveButton": "Mentés",
+        "cancelButton": "Mégse"
     }
 }
