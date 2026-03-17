@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { X } from 'phosphor-react';
 
 const EditReportModal = ({ report, onClose, onUpdateSuccess }) => {
-    console.log(report);
     const { showError, showSuccess } = useAuth();
     const { t, i18n } = useTranslation();
     const language = i18n.language.startsWith('hu') ? 'hu' : 'en';
@@ -23,7 +22,6 @@ const EditReportModal = ({ report, onClose, onUpdateSuccess }) => {
             try {
                 setLoading(true);
                 const result = await axiosInstance.get('/categories');
-                console.log(result.data);
                 setCategories(result.data);
             } catch (err) {
                 language === 'hu'
