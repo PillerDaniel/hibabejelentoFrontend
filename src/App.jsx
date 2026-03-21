@@ -22,6 +22,8 @@ import Register from './Pages/Register';
 import Landing from './Pages/Landing';
 import NotFound from './Pages/NotFound';
 import ReportDetails from './Pages/ReportDetails';
+import AdminStatistic from './Pages/AdminStatistic';
+import MaintainerDetails from './Pages/MaintainerDetails';
 
 function App() {
     return (
@@ -80,6 +82,24 @@ function App() {
                                     <ProtectedRoute
                                         allowedRoles={['admin']}
                                         element={<Register />}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/statistics"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['admin']}
+                                        element={<AdminStatistic />}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/statistics/:maintainerId"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['admin']}
+                                        element={<MaintainerDetails />}
                                     />
                                 }
                             />

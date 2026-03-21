@@ -128,5 +128,18 @@
         "closed": "Closed:",
         "avgTime": "Average Time:",
         "inProgress": "In Progress:"
+    },
+    "adminStatistic": {
+        "title": "Maintainers List",
+        "username": "Username",
+        "email": "Email",
+        "createdAt": "Created At",
+        "actions": "Actions",
+        "open": "View",
+        "noData": "No maintainers found..."
+    },
+    "maintainerDetails": {
+        "joined": "Registered:",
+        "noData": "No statistics found for this maintainer."
     }
 }

@@ -128,5 +128,18 @@
         "closed": "Lezárt:",
         "avgTime": "Átlagos idő:",
         "inProgress": "Folyamatban:"
+    },
+    "adminStatistic": {
+        "title": "Karbantartók listája",
+        "username": "Felhasználónév",
+        "email": "E-mail",
+        "createdAt": "Regisztráció",
+        "actions": "Műveletek",
+        "open": "Megtekintés",
+        "noData": "Nem található karbantartó..."
+    },
+    "maintainerDetails": {
+        "joined": "Regisztráció dátuma:",
+        "noData": "Nincs megjeleníthető statisztika"
     }
 }

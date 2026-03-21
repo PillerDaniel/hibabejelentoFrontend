@@ -10,7 +10,7 @@ import spinner from '../assets/spinner.svg';
 
 const Landing = () => {
     const { user, showError } = useAuth();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [overallStats, setOverallStats] = useState(null);
     const [maintainerStats, setMaintainerStats] = useState(null);
     const { t, i18n } = useTranslation();
@@ -21,7 +21,6 @@ const Landing = () => {
             try {
                 setLoading(true);
                 const response = await axiosInstance.get('/statistics');
-                console.log('Overall stats response:', response.data);
                 setOverallStats(response.data);
             } catch (error) {
                 language === 'hu'
@@ -39,7 +38,7 @@ const Landing = () => {
                 setLoading(false);
             }
         };
-        if (user) {
+        if (user && user.role !== 'user') {
             fetchOverallStats();
         }
     }, []);
@@ -51,7 +50,6 @@ const Landing = () => {
                 const response = await axiosInstance.get(
                     '/statistics/maintainer'
                 );
-                console.log('Maintainer stats response:', response.data);
                 setMaintainerStats(response.data);
             } catch (error) {
                 language === 'hu'
@@ -70,7 +68,7 @@ const Landing = () => {
             }
         };
 
-        if (user) {
+        if (user && user.role !== 'user') {
             fetchMaintainerStats();
         }
     }, []);
@@ -89,8 +87,7 @@ const Landing = () => {
 
     return (
         <div className="p-6 space-y-12">
-            {' '}
-            {user ? (
+            {user && user.role !== 'user' ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="col-span-full mb-2">
                         <h2 className="text-2xl font-black text-white flex items-center gap-3">
