@@ -117,5 +117,16 @@
         "description": "Description:",
         "saveButton": "Save",
         "cancelButton": "Cancel"
+    },
+    "landing": {
+        "overallStats": "Overall Statistics",
+        "noStat": "No statistics available",
+        "maintainerStats": "Your Performance"
+    },
+    "statisticCard": {
+        "total": "Total:",
+        "closed": "Closed:",
+        "avgTime": "Average Time:",
+        "inProgress": "In Progress:"
     }
 }

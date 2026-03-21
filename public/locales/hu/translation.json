@@ -117,5 +117,16 @@
         "description": "Leírás:",
         "saveButton": "Mentés",
         "cancelButton": "Mégse"
+    },
+    "landing": {
+        "overallStats": "Globális Statisztikák",
+        "noStat": "Nincs megjeleníthető statisztika",
+        "maintainerStats": "Saját Teljesítményed"
+    },
+    "statisticCard": {
+        "total": "Összes:",
+        "closed": "Lezárt:",
+        "avgTime": "Átlagos idő:",
+        "inProgress": "Folyamatban:"
     }
 }
