@@ -71,7 +71,7 @@ const StatisticCard = ({ stat, type }) => {
                     </div>
                     <span className="font-mono font-bold text-blue-300">
                         {stat.averageTime
-                            ? `${stat.averageTime.hours ? stat.averageTime.hours + 'h ' : ''}${stat.averageTime.minutes ? stat.averageTime.minutes + 'm ' : ''}${stat.averageTime.seconds ? stat.averageTime.seconds + 's' : ''}`
+                            ? `${stat.averageTime.days ? stat.averageTime.days + 'd ' : ''}${stat.averageTime.hours ? stat.averageTime.hours + 'h ' : ''}${stat.averageTime.minutes ? stat.averageTime.minutes + 'm ' : ''}${stat.averageTime.seconds ? stat.averageTime.seconds + 's' : ''}`
                             : '--'}
                     </span>
                 </div>
