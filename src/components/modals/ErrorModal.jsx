@@ -24,7 +24,10 @@ const ErrorModal = ({ lang, message, onClose, duration = 5000 }) => {
                     <p className="font-bold text-red-400">
                         {lang === 'hu' ? 'Hiba történt!' : 'Error occurred!'}
                     </p>
-                    <p className="text-sm text-gray-200">{message}</p>
+                    <p
+                        className="text-sm text-gray-200"
+                        dangerouslySetInnerHTML={{ __html: message }}
+                    />
                 </div>
                 <button
                     onClick={onClose}

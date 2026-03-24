@@ -5,7 +5,8 @@
         "logout": "Sign out",
         "login": "Login",
         "dashboard": "Dashboard",
-        "register": "Register"
+        "register": "Register",
+        "profile": "Profile"
     },
     "login": {
         "title": "Login",
@@ -141,5 +142,13 @@
     "maintainerDetails": {
         "joined": "Registered:",
         "noData": "No statistics found for this maintainer."
+    },
+    "profile": {
+        "email": "Email",
+        "username": "Username",
+        "changePassword": "Change Password",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "saveButton": "Save"
     }
 }

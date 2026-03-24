@@ -10,11 +10,13 @@ import {
     MenuItem,
     MenuItems,
 } from '@headlessui/react';
-import { UserCircle, SignOut } from 'phosphor-react';
+
+import { UserCircle, SignOut, UserCircleGear } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
 
 import HUflag from '../assets/flags/HUflag';
 import GBflag from '../assets/flags/GBflag';
+
 
 const Navbar = () => {
     const { isAuthenticated, user, logout, loading } = useAuth();
@@ -204,6 +206,18 @@ const Navbar = () => {
                                                     />
                                                 </button>
                                             </MenuItem>
+                                            <MenuItem>
+                                                <Link
+                                                    to="/profile"
+                                                    className="flex w-full items-center justify-between px-4 py-2 text-sm text-white hover:bg-white/5 transition-colors"
+                                                >
+                                                    {t('navbar.profile')}
+                                                    <UserCircleGear
+                                                        size={18}
+                                                        weight="bold"
+                                                    />
+                                                </Link>
+                                            </MenuItem>
                                         </MenuItems>
                                     </Menu>
                                 ) : (
@@ -242,12 +256,20 @@ const Navbar = () => {
                                 </Link>
                             )}
                         {isAuthenticated && ['admin'].includes(user.role) && (
+                            <>
                             <Link
                                 to="/register"
                                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
                             >
                                 {t('navbar.register')}
                             </Link>
+                            <Link
+                                to="/statistics"
+                                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                            >
+                                {t('navbar.statistics')}
+                            </Link>
+                            </>
                         )}
                     </div>
                 </DisclosurePanel>

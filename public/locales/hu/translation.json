@@ -5,7 +5,8 @@
         "logout": "Kijelentkezés",
         "login": "Bejelentkezés",
         "dashboard": "Vezérlőpult",
-        "register": "Regisztráció"
+        "register": "Regisztráció",
+        "profile": "Profil"
     },
     "login": {
         "title": "Bejelentkezés",
@@ -141,5 +142,13 @@
     "maintainerDetails": {
         "joined": "Regisztráció dátuma:",
         "noData": "Nincs megjeleníthető statisztika"
+    },
+    "profile": {
+        "email": "E-mail cím",
+        "username": "Felhasználónév",
+        "changePassword": "Jelszó módosítása",
+        "currentPassword": "Jelenlegi jelszó",
+        "newPassword": "Új jelszó",
+        "saveButton": "Mentés"
     }
 }

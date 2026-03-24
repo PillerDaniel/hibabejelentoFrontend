@@ -24,6 +24,7 @@ import NotFound from './Pages/NotFound';
 import ReportDetails from './Pages/ReportDetails';
 import AdminStatistic from './Pages/AdminStatistic';
 import MaintainerDetails from './Pages/MaintainerDetails';
+import Profile from './Pages/Profile';
 
 function App() {
     return (
@@ -55,6 +56,15 @@ function App() {
                                     <ProtectedRoute
                                         allowedRoles={['user', 'admin']}
                                         element={<ReportDetails />}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/profile"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['user', 'maintainer', 'admin']}
+                                        element={<Profile />}
                                     />
                                 }
                             />
