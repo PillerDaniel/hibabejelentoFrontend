@@ -90,7 +90,11 @@
         "emailPlaceholder": "example@example.com",
         "lastName": "Last Name",
         "firstName": "First Name",
-        "submitButton": "Register"
+        "submitButton": "Register",
+        "roleLabel": "Role",
+        "user": "User",
+        "maintainer": "Maintainer",
+        "admin": "Admin"
     },
     "reportDetails": {
         "backButton": "Back",

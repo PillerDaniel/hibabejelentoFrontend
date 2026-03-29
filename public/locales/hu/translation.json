@@ -90,7 +90,11 @@
         "emailPlaceholder": "pelda@example.com",
         "lastName": "Vezetéknév",
         "firstName": "Keresztnév",
-        "submitButton": "Regisztrálás"
+        "submitButton": "Regisztrálás",
+        "roleLabel": "Szerepkör",
+        "user": "Felhasználó",
+        "maintainer": "Karbantartó",
+        "admin": "Adminisztrátor"
     },
     "reportDetails": {
         "backButton": "Vissza",

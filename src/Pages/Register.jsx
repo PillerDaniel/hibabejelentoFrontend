@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { UserPlus, Envelope, User, IdentificationCard } from 'phosphor-react';
+import {
+    UserPlus,
+    Envelope,
+    User,
+    IdentificationCard,
+    ShieldCheck,
+} from 'phosphor-react';
 import axiosInstance from '../utils/axios';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +21,7 @@ const Register = () => {
         username: '',
         firstName: '',
         lastName: '',
+        role: 'user',
     });
 
     const handleSubmit = async (e) => {
@@ -30,6 +37,7 @@ const Register = () => {
                 username: '',
                 firstName: '',
                 lastName: '',
+                role: 'user',
             });
             language === 'hu'
                 ? showSuccess(
@@ -137,6 +145,28 @@ const Register = () => {
                         className="w-full p-3 bg-[#27374D] border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#526D82] outline-none transition-all"
                         placeholder={t('register.firstName')}
                     />
+                </div>
+                <div className="md:col-span-2">
+                    <label className="flex items-center gap-2 text-sm font-semibold text-[#27374D] mb-2">
+                        <ShieldCheck size={18} />{' '}
+                        {t('register.roleLabel') || 'Jogosultság'}
+                    </label>
+                    <select
+                        name="role"
+                        value={formData.role}
+                        onChange={handleChange}
+                        className="w-full p-3 bg-[#27374D] text-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#526D82] outline-none transition-all appearance-none cursor-pointer"
+                    >
+                        <option value="user">
+                            {t('register.user') || 'User'}
+                        </option>
+                        <option value="maintainer">
+                            {t('register.maintainer') || 'Maintainer'}
+                        </option>
+                        <option value="admin">
+                            {t('register.admin') || 'Admin'}
+                        </option>
+                    </select>
                 </div>
 
                 <div className="md:col-span-2 mt-4">
