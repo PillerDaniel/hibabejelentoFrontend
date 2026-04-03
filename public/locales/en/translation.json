@@ -6,7 +6,8 @@
         "login": "Login",
         "dashboard": "Dashboard",
         "register": "Register",
-        "profile": "Profile"
+        "profile": "Profile",
+        "category": "Categories"
     },
     "login": {
         "title": "Login",
@@ -154,5 +155,12 @@
         "currentPassword": "Current Password",
         "newPassword": "New Password",
         "saveButton": "Save"
+    },
+    "category": {
+        "title": "Create new category",
+        "placeholder": "Category name...",
+        "createButton": "Create",
+        "name": "Name",
+        "noCategories": "No categories found."
     }
 }

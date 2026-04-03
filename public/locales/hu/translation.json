@@ -6,7 +6,8 @@
         "login": "Bejelentkezés",
         "dashboard": "Vezérlőpult",
         "register": "Regisztráció",
-        "profile": "Profil"
+        "profile": "Profil",
+        "category": "Kategóriák"
     },
     "login": {
         "title": "Bejelentkezés",
@@ -154,5 +155,12 @@
         "currentPassword": "Jelenlegi jelszó",
         "newPassword": "Új jelszó",
         "saveButton": "Mentés"
+    },
+    "category": {
+        "title": "Új kategória létrehozása",
+        "placeholder": "Kategória neve...",
+        "createButton": "Létrehozás",
+        "name": "Név",
+        "noCategories": "Nincs megjeleníthető kategória."
     }
 }

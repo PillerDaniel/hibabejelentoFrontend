@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { XCircle, X } from 'phosphor-react';
+import { CheckCircle, X } from 'phosphor-react';
 
 const SuccesModal = ({ lang, message, onClose, duration = 5000 }) => {
     useEffect(() => {
@@ -15,7 +15,7 @@ const SuccesModal = ({ lang, message, onClose, duration = 5000 }) => {
     return (
         <div className="fixed top-25 right-5 z-[100] animate-fade-in-left">
             <div className="bg-[#27374D] border-l-4 border-green-500 text-white p-4 rounded-lg shadow-2xl flex items-center space-x-4 min-w-[300px] max-w-[450px]">
-                <XCircle
+                <CheckCircle
                     size={32}
                     className="text-green-500 shrink-0"
                     weight="fill"

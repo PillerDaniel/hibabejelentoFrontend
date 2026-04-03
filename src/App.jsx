@@ -25,6 +25,7 @@ import ReportDetails from './Pages/ReportDetails';
 import AdminStatistic from './Pages/AdminStatistic';
 import MaintainerDetails from './Pages/MaintainerDetails';
 import Profile from './Pages/Profile';
+import Category from './Pages/Category';
 
 function App() {
     return (
@@ -63,7 +64,11 @@ function App() {
                                 path="/profile"
                                 element={
                                     <ProtectedRoute
-                                        allowedRoles={['user', 'maintainer', 'admin']}
+                                        allowedRoles={[
+                                            'user',
+                                            'maintainer',
+                                            'admin',
+                                        ]}
                                         element={<Profile />}
                                     />
                                 }
@@ -92,6 +97,15 @@ function App() {
                                     <ProtectedRoute
                                         allowedRoles={['admin']}
                                         element={<Register />}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/category"
+                                element={
+                                    <ProtectedRoute
+                                        allowedRoles={['admin']}
+                                        element={<Category />}
                                     />
                                 }
                             />

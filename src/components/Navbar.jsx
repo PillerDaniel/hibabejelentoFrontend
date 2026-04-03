@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next';
 import HUflag from '../assets/flags/HUflag';
 import GBflag from '../assets/flags/GBflag';
 
-
 const Navbar = () => {
     const { isAuthenticated, user, logout, loading } = useAuth();
     const navigate = useNavigate();
@@ -127,6 +126,16 @@ const Navbar = () => {
                                             className="text-gray-300 hover:bg-white/5 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors"
                                         >
                                             {t('navbar.register')}
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="hidden sm:ml-6 sm:block">
+                                    <div className="flex space-x-4">
+                                        <Link
+                                            to="/category"
+                                            className="text-gray-300 hover:bg-white/5 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                                        >
+                                            {t('navbar.category')}
                                         </Link>
                                     </div>
                                 </div>
@@ -257,18 +266,24 @@ const Navbar = () => {
                             )}
                         {isAuthenticated && ['admin'].includes(user.role) && (
                             <>
-                            <Link
-                                to="/register"
-                                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                            >
-                                {t('navbar.register')}
-                            </Link>
-                            <Link
-                                to="/statistics"
-                                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                            >
-                                {t('navbar.statistics')}
-                            </Link>
+                                <Link
+                                    to="/register"
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                                >
+                                    {t('navbar.register')}
+                                </Link>
+                                <Link
+                                    to="/statistics"
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                                >
+                                    {t('navbar.statistics')}
+                                </Link>
+                                <Link
+                                    to="/category"
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                                >
+                                    {t('navbar.category')}
+                                </Link>
                             </>
                         )}
                     </div>
