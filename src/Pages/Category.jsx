@@ -18,7 +18,6 @@ const Category = () => {
             setLoading(true);
             const response = await axiosInstance.get('/categories');
             setCategories(response.data);
-            console.log(response.data);
         } catch (error) {
             language === 'hu'
                 ? showError(
@@ -46,14 +45,22 @@ const Category = () => {
 
         try {
             setSubmitting(true);
-            await axiosInstance.post('/categories', { name: newCategoryName });
+            const response = await axiosInstance.post('/categories', {
+                name: newCategoryName,
+            });
 
-            showSuccess(
-                language,
-                language === 'hu'
-                    ? 'Kategória létrehozva!'
-                    : 'Category created!'
-            );
+            language === 'hu'
+                ? showSuccess(
+                      language,
+                      response.data.messageHu ||
+                          'Kategória sikeresen létrehozva!'
+                  )
+                : showSuccess(
+                      language,
+                      response.data.messageEn ||
+                          'Category created successfully!'
+                  );
+
             setNewCategoryName('');
             fetchCategories();
         } catch (error) {
